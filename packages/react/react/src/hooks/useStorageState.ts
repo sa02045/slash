@@ -86,6 +86,10 @@ export function useStorageState<T>(
     [key, storage]
   );
 
+  useEffect(() => {
+    set(getValue());
+  }, [getValue, set]);
+
   const refresh = useCallback(() => {
     setState(getValue() ?? defaultValue);
   }, [defaultValue, getValue]);
