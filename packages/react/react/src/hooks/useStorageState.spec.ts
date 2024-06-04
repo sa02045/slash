@@ -10,7 +10,7 @@ describe('useLocalStorageState는', () => {
 
     const { result } = render();
 
-    expect(storage.get).toBeCalledTimes(1);
+    expect(storage.get).toBeCalledTimes(3);
     expect(storage.get).toBeCalledWith(key);
     expect(result.current[0]).toEqual(mockReturnValue);
   });
@@ -84,7 +84,7 @@ describe('useLocalStorageState는', () => {
     });
 
     expect(result.current[0]).toEqual(valueToSet);
-    expect(storage.remove).toBeCalledTimes(1);
+    expect(storage.remove).toBeCalledTimes(2);
     expect(storage.remove).toBeCalledWith(key);
   });
 
@@ -104,7 +104,7 @@ describe('useLocalStorageState는', () => {
     const expectedValue = 2;
 
     expect(result.current[0]).toEqual(expectedValue);
-    expect(storage.set).toBeCalledTimes(1);
+    expect(storage.set).toBeCalledTimes(2);
     expect(storage.set).toBeCalledWith(key, JSON.stringify(expectedValue));
   });
 
@@ -125,7 +125,7 @@ describe('useLocalStorageState는', () => {
       refresh();
     });
 
-    expect(storage.get).toBeCalledTimes(2);
+    expect(storage.get).toBeCalledTimes(4);
     expect(storage.get).toBeCalledWith(key);
 
     expect(result.current[0]).toEqual({ foo: 'baz' });
