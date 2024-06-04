@@ -11,6 +11,8 @@ type IntervalOptions =
       delay: number | null;
       // If it is specified as false, the Effect will run immediately.
       trailing?: boolean;
+      // If it is specified as false, the Effect will not run.
+      enabled?: boolean;
     };
 ```
 
